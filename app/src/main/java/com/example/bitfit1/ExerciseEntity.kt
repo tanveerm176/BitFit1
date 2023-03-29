@@ -6,9 +6,9 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "exercise_table")
 
-data class Exercise (
+data class ExerciseEntity (
+    @PrimaryKey(autoGenerate = true) val id: Long=0,
     @ColumnInfo(name = "weekday") val weekday: String?,
-    @ColumnInfo(name="exercise") val exercise : String?,
-    @ColumnInfo(name = "duration") val calories: String?,
-    @PrimaryKey(autoGenerate = true) val id: Long=0
-        )
+    @ColumnInfo(name="title") val title : String?,
+    @ColumnInfo(name = "duration") val duration: String?
+)
