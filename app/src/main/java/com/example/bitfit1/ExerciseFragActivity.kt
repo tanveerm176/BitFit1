@@ -21,8 +21,6 @@ class ExerciseFragActivity:AppCompatActivity() {
         val exerciseWeekday = findViewById<TextView>(R.id.inptExerWeekday)
         val exerciseSubmit = findViewById<Button>(R.id.submitExerBtn)
 
-//        exerciseSubmit.isEnabled = false
-
         exerciseSubmit.setOnClickListener {
             lifecycleScope.launch(Dispatchers.IO) {
                 (application as ExerciseApplication).db.exerciseDao().insert(
